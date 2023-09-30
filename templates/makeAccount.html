@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block title %}Creating an account{% endblock %}
+{% block body %}
+<!-- Reusing the same styling that was used on index page that 
+    is why the name of class is not relevant to the context -->
+<div class="index_nav">
+    <p><b>Bacak</b></p>
+</div>
+<div id="cont_make_account">
+    <div id="Acc_create_cont">
+        <h2 style="text-align: center;"><b><u>Making an account</u></b></h2>
+        <div id="message">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <h3>{{ message }}</h3>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <form action="/makeAccount" method="post" id="Acc_create">
+            <label for="new_acc">Name:
+                <input type="text" name="user" id="new_acc" required>
+            </label>
+            <Button type="submit" class="btn btn-primary" style="display: block; margin: auto;">Commit account</Button>
+        </form>
+    </div>
+    <div id="show_Accs">
+        <h4 style="text-align: center;"><b><u>List of Accounts</u></b></h4>
+        <div id="acc_table">
+            <table class="table table-striped text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+                {% for i in range(0, length) %}
+                <tr>
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ Accounts[i] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+<footer id="index_footer">
+    <a href="/index">Go to Homepage</a>
+</footer>
+{% endblock %}

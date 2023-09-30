@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Edit accounts{% endblock %}
+{% block body %}
+<div id="index">
+  <div class="index_nav">
+      <p><b>Bacak</b></p>
+	  <!-- Reusing the same styling that was used on index page that 
+			is why the name of class is not relevant to the context -->
+      <h2 id="pageContent">Edit mode</b></h2>
+  </div>
+  <h2 id="greet">Editing accounts</h2>
+  <div id="content">
+    <a href="/osEntry">Update O/S A/c's</a>
+  </div>
+  <div id="content">
+    <a href="/updateCashAc">Update Cash A/c's</a>
+    <a href="/expense_entry">Update expenses</a>
+  </div>
+  <footer id="index_footer">
+    <a href="/index">Go to Homepage</a>
+  </footer>
+</div>  
+{% endblock %}

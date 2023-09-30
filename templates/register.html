@@ -1,0 +1,38 @@
+<!-- Store this code in 'register.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">			
+	</head>
+	<body>
+		<div style="height: 10vh; font-size: 4vh; text-align: center;">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+					<h3>{{ message }}</h3>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</div>
+		<div>
+		<div class="border">
+			<div class="header">
+				<h1 class="word">Register</h1>
+			</div>
+			</br></br></br>
+			<h2 class="word">
+				<form action="/register" method="post">
+				<div class="msg">{{ msg }}</div>
+					<input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox" required></br></br>
+					<input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox" required></br></br>
+					<input id="con_password" name="con_password" type="con_password" placeholder="Confirm password" class="textbox" required></br></br>
+					<input type="submit" class="btn" value="Sign Up"></br>
+				</form>
+			</h2>
+			<p class="bottom">Already have an account? <a class="bottom_l" href="{{url_for('login')}}"> Sign In here</a></p>
+		</div>
+		</div>
+	</body>
+</html>

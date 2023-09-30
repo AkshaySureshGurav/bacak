@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}Expense details{% endblock %}
+{% block body %}
+<div id="index">
+  <div class="index_nav">
+      <p><b>Bacak</b></p>
+      <div id="profile"><a href="/index">Go to Homepage</a></div>
+      <div id="profile"><a href="/viewAC">Go to Previous page</a></div>
+
+	  <!-- Reusing the same styling that was used on index page that 
+			is why the name of class is not relevant to the context -->
+  </div>
+  <!-- Copying the syntax of the html page so not making new css 
+    property-->
+  <h2 class="os_viewing" style="padding-top: 4.5vh;">Viewing expenses</h2>
+  <h2 class="os_viewing"></h2>
+  <div id="entries_detailed_view">
+    <table class="table table-striped text-center">
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Description</th>
+        </tr>
+        <!-- loop to print the data -->
+        {% for i in data %}
+        <tr>
+          {% for j in i %}
+          <td>{{ j }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+</div>  
+{% endblock %}

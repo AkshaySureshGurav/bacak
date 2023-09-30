@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}View accounts{% endblock %}
+{% block body %}
+<div id="index">
+  <div class="index_nav">
+      <p><b>Bacak</b></p>
+	  <!-- Reusing the same styling that was used on index page that 
+			is why the name of class is not relevant to the context -->
+  </div>
+  <!-- Copying the syntax of the html page so not making new css 
+    property-->
+  <h2 id="greet">Viewing accounts</h2>
+  <div id="content">
+    <a href="/os_bal_detailed_view">Outstanding Ac's detailed view</a>
+    <a href="/cash_detailed_view">Cash A/c's detailed view</a>
+  </div>
+  <div id="content">
+    <a id="right" href="/expense_detailed_view">Expenses</a>
+  </div>
+  <footer id="index_footer">
+    <a href="/index">Go to Homepage</a>
+  </footer>
+</div>  
+{% endblock %}

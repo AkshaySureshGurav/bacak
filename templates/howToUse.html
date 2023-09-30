@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}How to?{% endblock %}
+{% block body %}
+<div id="index">
+  <div class="index_nav">
+      <p><b>Bacak</b></p>
+  </div>
+  <!-- using the styling of greet from index.html -->
+  <h2 id="greet">How to use</h2>
+  <div id="about_cont">
+    <p class="about_para">This is a basic accounting WebApp where you'll find three accounts
+      namely -</p>
+    <p class="about_para about_para_list">1. <b>Cash account</b> - is base to all accounting work in this WebApp. Because if you
+      want to show outstanding balance/ expense then you need cash balance in your hand.</p>
+    <p class="about_para about_para_list">2. <b>Outstanding account</b> - is an account where you'll find
+      list of accounts which have outstanding balances.</p>
+    <p class="about_para about_para_list">3. <b>Expense account</b> - is an account where you'll find all the
+      expenses made.</p>
+    <p class="about_para">First step will be to add the cash balance so that we can show outstanding
+      balances and expenses. After adding cash balance, you'll need to make accounts of the
+      individual/company to whom you are giving cash as outstanding balance or as an expense. You can
+      make accounts of an individual/company from <u>Make accounts</u> option on the <u>Homepage</u>.</p>
+    <p class="about_para">After making the accounts, you can make entries to outstanding (O/s) account or
+      expense account. Even if you are making an entry to expense account, you will need to make an entry to
+      outstanding account first. Because, a entry will not be considered as an expense untill you have
+      a receipt or acknowledge paper from the opposite party for the expense.</p>
+    <p class="about_para">You can view the accounts by selecting the View accounts option on the
+      Homepage. If you want to check a sample accounts in this WebApp, I have made a sample account
+      with <b>Username="xyz.LTD" and password="xyz"</b> in which I have made entries to the
+      accounts for giving an example how the entries are done.</p>
+    </div>
+  <footer id="index_footer">
+    <a href="/index">Previous page</a>
+  </footer>
+</div>
+{% endblock %}

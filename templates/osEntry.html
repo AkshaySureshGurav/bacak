@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}O/s entry{% endblock %}
+{% block body %}
+<div id="index">
+  <div class="index_nav">
+      <p><b>Bacak</b></p>
+  </div>
+  <!-- using the styling of greet from index.html -->
+  <h3 id="greet">Editing outstanding entry</h3>
+  <div id="entry_container">
+    <div id="message">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+              <h3>{{ message }}</h3>
+            {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </div>
+    <form action="/osEntry" method="POST" id="os_form">
+      <label for="acc_name">Account: 
+        <select id="acc_name" name="account" required>
+          <option value="none" selected>None</option>
+          <!-- i + 1 cause in db our data starts with id = 1 -->
+          {% for i in range(0, len) %}
+          <option value="{{ i+1 }}">{{ acc_name[i] }}</option>
+          {% endfor %}
+        </select> 
+      </label>
+      <label for="os_amt">Amount:
+        <input type="number" name="amount" id="os_amt" placeholder="Amount taken" required>
+      </label>
+      <label for="descr">Description:
+        <input type="text" name="description" id="descr" placeholder="Description" required maxlength="20">
+      </label>   
+      <button type="submit" class="btn btn-primary" style="display: block; margin: auto;">Commit entry</button>
+    </form>
+  </div>
+  <footer id="index_footer">
+    <a href="/makeAccount">Make accounts</a>
+    <a href="/os_bal_detailed_view">Check O/s balance</a>
+    <a href="/index">Go to Homepage</a>
+  </footer>
+</div>  
+{% endblock %}

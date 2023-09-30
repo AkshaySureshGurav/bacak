@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}O/s balance{% endblock %}
+{% block body %}
+<div id="index">
+  <div class="index_nav">
+      <p><b>Bacak</b></p>
+      <div id="profile"><a href="/index">Go to Homepage</a></div>
+      <div id="profile"><a href="/viewAC">Go to Previous page</a></div>
+	  <!-- Reusing the same styling that was used on index page that 
+			is why the name of class is not relevant to the context -->
+  </div>
+  <!-- Copying the syntax of the html page so not making new css 
+    property-->
+  <h5 class="os_viewing">Viewing O/S balance accounts</h5>
+  <h4 class="os_viewing" style="text-decoration: unset;">Outstanding balance: {{ OS_balance }}</h4> 
+  <div id="entries_detailed_view" style="overflow-y: auto;">
+    <table class="table table-striped text-center">
+        <tr>
+            <th>ID</th>
+            <th>Updated on</th>
+            <th>Name</th>
+            <th>Amount</th>
+        </tr>
+        <!-- loop to print the data -->
+        {% for i in data %}
+        <tr>
+          {% for j in i %}
+          <td>{{ j }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+  </div>
+  <footer id="index_footer">
+    <a href="/os_entry_detailed_view">O/s accounts detailed entries</a>
+  </footer>  
+</div>
+{% endblock %}
